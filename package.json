@@ -13,7 +13,7 @@
         "format:repo": "npm run format && npm run lint -- --fix",
         "lint": "eslint --cache --cache-location ./node_modules/.cache/eslint .",
         "lint:fix": "eslint . --ext ts --ext tsx --ext js --ext jsx --fix",
-        "prepare": "node --experimental-network-imports -e \"if(process.env.NODE_ENV !== 'production') { import('./.husky/install.mjs') }\"",
+        "prepare": "husky",
         "start": "remix-serve ./build/server/index.js"
     },
     "dependencies": {
