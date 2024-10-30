@@ -18,7 +18,7 @@ const config: Config = {
     },
     extend: {
       fontFamily: {
-        "roboto-slab": ["Roboto Slab", "serif"],
+        "roboto-slab": "var(--font-roboto-slab)",
       },
       minHeight: {
         screenLessNav: "calc(100dvh - 60px)",
