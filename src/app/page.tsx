@@ -18,7 +18,7 @@ export default function Home() {
   return (
     <div className="relative">
       <div className="absolute -z-10 aspect-auto w-full flex justify-center xl:-top-40 antialiased">
-        <Image src={ellipse} alt="ellipse" className="w-full" />
+        <Image priority src={ellipse} alt="ellipse" className="w-full" />
       </div>
       <main className="container text-center">
         <section className="flex flex-col w-full items-center justify-center py-16 lg:py-36 gap-10">

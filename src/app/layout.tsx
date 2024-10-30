@@ -1,19 +1,15 @@
 import "./globals.css";
 
 import type { Metadata, Viewport } from "next";
-import localFont from "next/font/local";
+import { Roboto_Slab } from "next/font/google";
 import { ThemeProvider } from "~/components/providers/theme-provider";
 import { CLIENT } from "~/lib/constants/config";
 
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
-});
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
+const robotoSlab = Roboto_Slab({
+  weight: ["100", "300", "400", "500", "700", "900"],
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-roboto-slab",
 });
 
 export const viewport: Viewport = {
@@ -24,6 +20,7 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
+  metadataBase: new URL(CLIENT.host),
   title: CLIENT.title,
   description: CLIENT.description,
   robots: "index, follow",
@@ -33,7 +30,6 @@ export const metadata: Metadata = {
   openGraph: {
     images: `${CLIENT.host}/og-image.png`,
     type: "website",
-    url: "https://shield.rs",
     locale: "en_US",
     siteName: CLIENT.name,
     title: CLIENT.title,
@@ -60,7 +56,7 @@ export default function RootLayout({
         <meta charSet="utf-8" />
       </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} flex flex-col min-h-svh antialiased bg-background-base overflow-x-hidden`}
+        className={`${robotoSlab.variable} flex flex-col min-h-svh antialiased bg-background-base overflow-x-hidden`}
       >
         <ThemeProvider
           attribute="class"
